@@ -16,9 +16,9 @@ gene_list <- read.table('../data/Figure1_data/Figure1E/DD_Interacting_gene.txt',
 gene <- gsub(" ","",gene_list[,1])
 
 ###AverageExpression
-expr1 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),group.by = "organ",slot = 'data')[['SCT']]
-expr2 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),slot = 'data')[['SCT']]
-expr3 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),group.by = "phase",slot = 'data')[['SCT']]
+expr1 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),group.by = "organ",slot = 'data')[['Spatial']]
+expr2 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),slot = 'data')[['Spatial']]
+expr3 <- AverageExpression(my_rds,features = unique(gsub("_","-",gene)),group.by = "phase",slot = 'data')[['Spatial']]
 
 write.table(expr1,'DD_marker_gene_organ_phase_exp.txt',sep="\t",quote=FALSE,row.names=TRUE)
 write.table(expr2,'DD_marker_gene_organ_exp.txt',sep="\t",quote=FALSE,row.names=TRUE)
