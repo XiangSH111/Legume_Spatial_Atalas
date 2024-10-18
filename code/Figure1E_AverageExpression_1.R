@@ -16,9 +16,9 @@ MX_rootmarker <- read.table('../data/Figure1_data/Figure1E/MX_Interacting_gene.t
 MX_rootID <- gsub(" ", "", MX_rootmarker[,1], fixed = TRUE)
 
 ###AverageExpression
-expr1 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),group.by = "organ",slot = 'data')[['SCT']]
-expr2 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),slot = 'data')[['SCT']]
-expr3 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),group.by = "phase",slot = 'data')[['SCT']]
+expr1 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),group.by = "organ",slot = 'data')[['Spatial']]
+expr2 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),slot = 'data')[['Spatial']]
+expr3 <- AverageExpression(my_rds,features = unique(gsub("_","-",MX_rootID)),group.by = "phase",slot = 'data')[['Spatial']]
 
 write.table(expr1,'MX_Interacting_gene_organ_phase_exp(rm_Senescence).txt',sep="\t",quote=FALSE,row.names=TRUE)
 write.table(expr2,'MX_Interacting_gene_organ_exp(rm_Senescence).txt',sep="\t",quote=FALSE,row.names=TRUE)
