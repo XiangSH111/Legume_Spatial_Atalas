@@ -9,8 +9,7 @@ library(readr)
 library(gridExtra)
 library(RColorBrewer)
 
-rdsf <- read_tsv("../data/Figure1_data/Figure1B/MX_RDS.info")
-#rdsf <- read_tsv("../data/Figure1_data/Figure1B/DD_RDS.info")
+rdsf <- read_tsv("../data/MX_RDS.info")
 nodule<-list()
 id<-c()
 vf<-vector()
@@ -22,8 +21,8 @@ for (i in 1:length(rdsf$Rds)){
 	id[i]<- rdsf$Sample[i]
 }
 
-nodule<-merge(nodule[[1]], y=nodule[-1], add.cell.ids = id, project="Gmax")
-DefaultAssay(nodule) <- "Spatial"
+nodule<-merge(nodule[[1]], y=nodule[-1], add.cell.ids = id, project="nodule")
+
 VariableFeatures(nodule) <- vf
 nodule <- ScaleData(object = nodule,verbose = FALSE,features=VariableFeatures(nodule))
 nodule <- RunPCA(object = nodule, verbose = FALSE)
