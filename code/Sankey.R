@@ -4,7 +4,7 @@ library(highcharter)
 library(tidyverse)
 
 ###input data
-df <- read_xlsx('../data/Figure2_data/Figure2C/input_sankey_MX.csv',col_names = F)
+df <- read_xlsx('../data/input_sankey_MX.csv',col_names = F)
 names(df) <- c("from","to","weight")
 
 ###
