@@ -37,7 +37,7 @@ dev.off()
 adata <- subset(x = adata, subset = nFeature_Spatial >= 10)
 
 ###SCTransform to normalize the data
-adata <- SCTransform(adata, assay = "Spatial", verbose = FALSE)
+adata <- SCTransform(adata, assay = "Spatial", verbose = FALSE,min.cells = 1)
 adata <- RunPCA(adata,assay="SCT")
 
 pdf("ElbowPlot.pdf", width = 10)
