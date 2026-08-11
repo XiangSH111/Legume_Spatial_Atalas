@@ -6,7 +6,6 @@ library(monocle3)
 
 #
 my_rds <- readRDS(Medicago_part_nodule.RDS)
-#my_rds <- readRDS(DD_part_nodule.RDS)
 my_rds$organ <- Idents(my_rds)
 
 #load data
@@ -73,7 +72,6 @@ plot_cells(cds,
 dev.off()
 
 get_earliest_principal_node <- function(cds, time_bin= "Meristematic zone"){
-#get_earliest_principal_node <- function(cds, time_bin= "0"){
 	cell_ids <- which(colData(cds)[,"Idents.my_rds."] == time_bin)
 	closest_vertex <-
 	cds@principal_graph_aux[["UMAP"]]$pr_graph_cell_proj_closest_vertex
