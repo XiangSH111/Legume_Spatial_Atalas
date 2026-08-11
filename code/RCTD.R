@@ -10,10 +10,10 @@ setwd("./")
 dir.create('Result')
 savedir = './Result'
 
-sc_matrix <- "/data/scRNA_expression_matrix.csv"
-sc_barcode <- "/data/scRNA_coordinates.csv"
-spatial_matrix <- "/data/spatial_expression_matrix.csv"
-spatial_barcode <- "/data/spatial_coordinates.csv"
+sc_matrix <- "../data/scRNA_expression_matrix.csv"
+sc_barcode <- "../data/scRNA_coordinates.csv"
+spatial_matrix <- "../data/spatial_expression_matrix.csv"
+spatial_barcode <- "../data/spatial_coordinates.csv"
 
 counts <- read.table(sc_matrix,sep="\t", header=T)
 #rownames(counts) <- counts[,1]; counts[,1] <- NULL
