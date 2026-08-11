@@ -6,7 +6,7 @@ library(WGCNA)
 # The following setting is important, do not omit.
 options(stringsAsFactors = FALSE)
 #Read in the female liver data set
-fpkm = read.table("../data/Figure3_data/Figure3A/expression.txt",header=T,comment.char = "",check.names=F)
+fpkm = read.table("../data/expression.txt",header=T,comment.char = "",check.names=F)
 # Take a quick look at what is in the data set
 dim(fpkm)
 names(fpkm)
