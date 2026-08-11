@@ -11,12 +11,7 @@ from scipy import sparse as sp
 ###
 adata = scv.read('MX.h5ad', cache=True)
 name1 = 'X'
-name2 = '../data/Figure2_data/Figure2D/MX_metadata'
-###
-#adata = scv.read('DD.h5ad', cache=True)
-#name1 = 'X'
-#name2 = '../data/Figure2_data/Figure2D/DD_metadata'
-
+name2 = '../data/MX_metadata'
 
 scv.settings.figdir ='fig_output'
 scv.set_figure_params('scvelo')
